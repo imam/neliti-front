@@ -6,6 +6,7 @@ import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { geocodeByPlaceId } from 'react-google-places-autocomplete';
+import ReactJson from 'react-json-view'
 
 export default function Home() {
   const [value, setValue] = useState(null);
@@ -38,7 +39,7 @@ export default function Home() {
            />
         <div>
           {result !== null && <div>
-            {JSON.stringify(result)}
+            <ReactJson src={result}/>
             </div>}
         </div>
       </Container>
